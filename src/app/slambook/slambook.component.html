@@ -1,0 +1,106 @@
+<div class="container">
+    <!-- <div class="row"> -->
+    <!-- <div class="col-sm-12 "> -->
+    <form action="" [formGroup]="friendData" *ngIf="hideForm" (ngSubmit)="addFriendsData()" class="bg-dark p-5 text-light">
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="fName">First Name</label>
+                <input type="text" id="fName" class="form-control" formControlName="uFName">
+                <small class="text-warning" *ngIf="!friendData.get('uFName').valid && friendData.get('uFName').touched">* Name Required</small>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="lName">Last Name</label>
+                <input type="text" id="lName" class="form-control" formControlName="uLName">
+                <small class="text-warning" *ngIf="!friendData.get('uLName').valid && friendData.get('uLName').touched">* Last Name Required</small>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="iCall">I Call You As</label>
+                <input type="text" id="iCall" class="form-control" formControlName="uICall">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="firstMeet">Our First Meet</label>
+                <input type="text" id="firstMeet" class="form-control" formControlName="uFirstMeet">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="callMe">You Like to Call Me as</label>
+                <input type="text" id="callMe" class="form-control" formControlName="uCallMe">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="cNum">Contact Number</label>
+                <input type="email" id="cNum" class="form-control" formControlName="uCNum">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="Adrs">Address</label>
+                <input type="text" id="Adrs" class="form-control" formControlName="uAdrs">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="bDate">Birth Date</label>
+                <input type="date" id="bDate" class="form-control" formControlName="uBDate">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="photo">Upload your Photo</label>
+                <input type="file" id="photo" (change)="getImg($event)" class="form-control" formControlName="uPhoto">
+                <small>
+                    "Image shuold in passport size "
+                    <small class="text-danger" *ngIf="150360 <=imgSize">
+                        *Image Size More Than 150kb*
+                    </small>
+                </small>
+                
+            </div>
+            <div class="form-group col-md-6">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" class="form-control" formControlName="uEmail">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="favSong">Your Fevorite Song</label>
+                <input type="text" id="favSong" class="form-control" formControlName="uFavSong">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="favMovie">Your Fevorite Movie</label>
+                <input type="text" id="favMovie" class="form-control" formControlName="uFavMovie">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="memMument">Most Memorable Moment</label>
+                <input type="text" id="memMument" class="form-control" formControlName="uMemMoment">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="youLike">A Gift Which you like most</label>
+                <input type="text" id="youLike" class="form-control" formControlName="uYouLike">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="adviceFor">Advice For me..! :)</label>
+                <textarea name="" id="adviceFor" class="form-control" cols="30" rows="10"
+                    formControlName="uAdviceFor"></textarea>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="feedback">Feedback Regarding this e-slam-book</label>
+                <textarea name="" id="feedback" class="form-control" cols="30" rows="10"
+                    formControlName="uFeedback"></textarea>
+            </div>
+            <div class="mx-auto">
+                <button class="btn btn-sm btn-light" type="submit">Add to Friends</button>
+            </div>
+        </div>
+    </form>
+    <!-- </div> -->
+    <!-- </div> -->
+
+    <div class="row " *ngIf="showMsg" >
+        <div class="col-sm-10">
+            <div class="card text-center">
+                <div class="card-header bgDark">
+                  
+                </div>
+                <div class="card-body ">
+                  <h3 class="card-title"> Successfully Submitted</h3>
+                  <h4 class="card-title border bgLight ">Thank you !</h4>
+                </div>
+                <div class="card-footer bgDark">
+                
+                </div>
+              </div>
+        </div>
+    </div>
+</div>

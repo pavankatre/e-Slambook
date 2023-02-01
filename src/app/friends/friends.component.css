@@ -1,0 +1,15 @@
+/* .cardImg{
+    
+    height: 200px;
+} */
+.item {
+    background-color: aqua;
+    border: 0.50px solid rgb(54, 92, 92);
+    border-radius: 20px;
+
+}
+.main{
+background-color: rgb(200, 251, 251);
+border: 1px solid black;
+border-radius: 20px;
+}

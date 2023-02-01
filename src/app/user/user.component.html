@@ -1,0 +1,34 @@
+
+
+ <div class="container">
+    <div class="row d-flex justify-content-center align-items-center item">
+        <div class="col-sm-5 bg-dark text-light " *ngIf="ownerUsed">
+            <form action="" [formGroup]="userEmailRegister" class="my-3" (ngSubmit)="registerEmail()">
+                <div class="form-group">
+                    <label for="uEmail ">For Register Email</label>
+                    <input type="text" id="uEmail" class="bg-dark  text-light form-control"  formControlName="usrEmail">
+                </div>
+                <div class="">
+                    <button type="submit" class="btn btn-sm btn-primary">Rrgister</button>
+                </div>
+             </form>
+        </div>
+        <div class="col-sm-5 bg-dark text-light">
+            <form action="" [formGroup]="userEmail" class="my-3" (ngSubmit)="chechUser()">
+                <div class="form-group">
+                    <label for="uEmail ">Enter Register Email</label>
+                    <input type="text" id="uEmail" class="bg-dark  text-light form-control"  formControlName="usrEmail">
+                </div>
+                <div class="">
+                    <button type="submit" class="btn btn-sm btn-primary">Check</button>
+                </div>
+             </form>
+        </div>
+        <div class="col-md-8 bg-dark text-light" *ngIf="notRegester">
+           <h4>This email is not Register . For Registretion click  on that link </h4>
+           <a href="mailto:pavan_katre@rediff.com"  >click</a>
+           <h4>OR</h4>
+           <h4>Copy this email address  pavan_katre@rediff.com and send mail to register your email id</h4>
+        </div>
+    </div>
+ </div>

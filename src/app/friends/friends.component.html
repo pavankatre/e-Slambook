@@ -1,0 +1,129 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 m-4"  *ngFor="let lst of userList ; let i=index" >
+            <mat-card *ngIf="comandForCard" class="">
+                <img mat-card-image class=" cardImg" src="{{lst.uPhoto}}">
+                <mat-card-title>
+                    <h4>{{lst.uFName}}</h4>
+                </mat-card-title>
+                <mat-card-actions>
+                    <button class="btn btn-sm"></button>
+                    <button type="button" (click)="moreInfo(i)" class="btn btn-primary"
+                       >
+                     About Me
+                    </button>
+                    <!-- <button type="button" (click)="moreInfo(i)" class="btn btn-primary" data-toggle="modal"
+                        data-target="#exampleModal">
+                        More About Me
+                    </button> -->
+                </mat-card-actions>
+            </mat-card>
+            <!-- Button trigger modal -->
+
+
+
+        </div>
+        <div class="row main d-flex justify-content-center pt-3 pb-3" *ngIf="comandForDetai">
+
+<div class="col-md-12">
+    <button class="btn btn-sm btn-primary rounded " (click)="backTOComp()">Back</button>
+</div>
+            <div class="uPhoto  col-sm-5  mt-5">
+                <img src="{{list.uPhoto}}" class="img-fluid item shadow-lg" alt="">
+            </div>
+            <div class="uAbout item  col-sm-5  shadow-lg mt-5 ml-md-5">
+                <h3>About Me</h3>
+                <h5>Full Name :- {{list.uFName}}</h5>
+                <h5>DOB :- {{list.uBDate}}</h5>
+                <h5>You Like to Call Me :- {{list.uCallMe}}</h5>
+                <h5>Address :- {{list.uAdrs}}</h5>
+
+            </div>
+            <div class="uFevorite item col-sm-5  shadow-lg mt-5 ">
+                <h3>Fevorite</h3>
+                <h5>Fevorite Movie :- {{list.uFavMovie}}</h5>
+                <h5>Fevorite Song :- {{list.uFavSong}}</h5>
+            </div>
+            <div class="uMemories item  col-sm-5  shadow-lg mt-5 ml-md-5">
+                <h3>Memories</h3>
+                <h5>Our First Meet :- {{list.uFirstMeet}}</h5>
+                <h5>Most Memorable Moment :- {{list.uMemMoment}}</h5>
+                <h5>A Gift Which you like most :- {{list.uYouLike}}</h5>
+            </div>
+            <div class="uPavan item  col-sm-5  shadow-lg mt-5 ">
+                <h3>About Pavan</h3>
+                <h5>I call You :- {{list.uICall}}</h5>
+                <h5>Advice For You :- <small>{{list.uAdviceFor}}</small></h5>
+            </div>
+            <div class="uContact item col-sm-5  shadow-lg mt-5 ml-md-5">
+                <h3>Contact Me</h3>
+                <h5>Mobile Number :- {{list.uCNum}}</h5>
+                <h5>Email Address :- {{list.uEmail}}</h5>
+            </div>
+            <div class="uFeedBack item  col-sm-8  shadow-lg mt-5">
+                <h3>Feedback</h3>
+                <h5>Feedback For e-Slambook :- <small>{{list.uFeedback}}</small></h5>
+            </div>
+            
+        </div>
+        <!-- Modal -->
+        <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+
+
+                            <div class="uPhoto  col-sm-12">
+                                <img src="{{list.uPhoto}}" class="img-fluid" alt="">
+                            </div>
+                            <div class="uAbout col-sm-5">
+                                <h3>About Me</h3>
+                                <h5>Full Name :- {{list.uFName}}</h5>
+                                <h5>DOB :- {{list.uBDate}}</h5>
+                                <h5>You Like to Call Me :- {{list.uCallMe}}</h5>
+                                <h5>Address :- {{list.uAdrs}}</h5>
+
+                            </div>
+                            <div class="uFevorite col-sm-5">
+                                <h3>Fevorite</h3>
+                                <h5>Fevorite Movie :- {{list.uFavMovie}}</h5>
+                                <h5>Fevorite Song :- {{list.uFavSong}}</h5>
+                            </div>
+                            <div class="uMemories col-sm-5">
+                                <h3>Memories</h3>
+                                <h5>Our First Meet :- {{list.uFirstMeet}}</h5>
+                                <h5>Most Memorable Moment :- {{list.uMemMoment}}</h5>
+                                <h5>A Gift Which you like most :- {{list.uYouLike}}</h5>
+                            </div>
+                            <div class="uPavan col-sm-5">
+                                <h3>About Pavan</h3>
+                                <h5>I call You :- {{list.uICall}}</h5>
+                                <h5>Advice For You :- <small>{{list.uAdviceFor}}</small></h5>
+                            </div>
+                            <div class="uContact col-sm-5">
+                                <h3>Contact Me</h3>
+                                <h5>Mobile Number :- {{list.uCNum}}</h5>
+                                <h5>Email Address :- {{list.uEmail}}</h5>
+                            </div>
+                            <div class="uFeedBack col-sm-8">
+                                <h3>Feedback</h3>
+                                <h5>Feedback For e-Slambook :- <small>{{list.uFeedback}}</small></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                         <button type="button" class="btn btn-primary">Save changes</button> 
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</div>
